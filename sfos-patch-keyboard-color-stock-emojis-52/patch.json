@@ -1,0 +1,15 @@
+{
+    "author": "ichthyosaurus",
+    "name": "sfos-patch-keyboard-color-stock-emojis-52",
+    "display_name": "Stock emoji keyboard with colors (SFOS 5.2)",
+    "version": "1.5.5",
+    "category": "Keyboard",
+    "description": "Temporary SFOS 5.2 build of ichthyosaurus's color emoji keyboard patch.\nAll credit for the patch goes to ichthyosaurus.\n\nCompatible with SFOS 5.2.0.18 and later 5.2.0.x.\nIf Patchmanager reports it as incompatible, set the version check to Relaxed.",
+    "discussion": "https://forum.sailfishos.org/t/patches-by-ichthyosaurus",
+    "sources": "https://github.com/lillelilje/sfos-patches",
+    "donations": "https://liberapay.com/ichthyosaurus",
+    "compatible": [
+        "5.2.0.18",
+        "5.2.0.20"
+    ]
+}
