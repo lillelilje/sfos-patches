@@ -1,0 +1,145 @@
+#
+# SailfishOS Patch Configuration File
+# for sailfish-patch
+#
+# Fields:
+# - one line: Prefix, DisplayName, PackageName, Category,
+#             Maintainer, Summary, DiscussionLink, DonationsLink,
+#             SourcesLink, Version
+# - multiple lines: Keywords, Description, Screenshots,
+#             CompatibleVersions, Changelog, Requires,
+#             Obsoletes, Conflicts
+#   (each line in a multiline field must start with '- ')
+#
+
+SourcePackages:
+- jolla-keyboard >= 0.7.1
+
+Prefix: /usr
+DisplayName: Stock emoji keyboard with colors (SFOS 5.2)
+PackageName: sfos-patch-keyboard-color-stock-emojis-52
+Category: Keyboard
+Keywords:
+- Patch
+- Keyboard
+- emoji
+
+Maintainer: ichthyosaurus
+Summary: Patch adding support for color emojis to the stock emoji keyboard
+Description:
+- Temporary SFOS 5.2 build of ichthyosaurus's color emoji keyboard patch.
+- All credit for the patch goes to ichthyosaurus.
+-
+- This patch adds support for color emojis, skin tone variations, and different
+- emoji styles to the stock emoji keyboard layout.
+- Recently used emojis are available in the suggestions row for quick use.
+-
+- Emoji sets have to be installed manually. Please follow the instructions in
+- the [Whisperfish wiki](https://gitlab.com/rubdos/whisperfish-wiki/-/blob/master/Emojis.md).
+-
+- **Note:** this is a stand-in for ichthyosaurus's original color emoji patch; remove
+- that one (and the improved stock emojis patch) before installing.
+
+DiscussionLink: https://forum.sailfishos.org/t/patches-by-ichthyosaurus
+DonationsLink: https://liberapay.com/ichthyosaurus
+SourcesLink: https://github.com/lillelilje/sfos-patches
+
+# NOTE don't forget to update the version in
+# <...>/patched/maliit/plugins/com/jolla/ichthyo_color_emojis/EmojiConfigOverlay.qml
+Version: 1.5.5
+Release: 1
+License: GPL-3.0-or-later
+
+Requires:
+- sailfish-version >= 5.2.0
+- @sources
+
+Conflicts:
+- sfos-patch-keyboard-improved-stock-emojis
+- sfos-patch-keyboard-color-stock-emojis
+
+Screenshots:
+- screenshot-1.png
+- screenshot-2.png
+- screenshot-3.png
+- screenshot-4.png
+
+CompatibleVersions:
+- 5.2.0.20
+
+
+#
+# WARNING Don't forget to update the current version number in EmojiConfigOverlay.qml!
+#
+Changelog:
+- 1.5.5:
+- - Fixed compatibility with SFOS 5.2
+- - This version targets SFOS 5.2; older versions need an earlier release of the patch
+- - Added support for the current OpenMoji and Twemoji emoji sets
+-
+- 1.5.2:
+- - Fixed compatibility with SFOS 4.5
+- - The patch should now work on SFOS 3.4 to 4.6
+- - compatibility with SFOS < 4.5 and > 4.6 has not been tested
+- - You may have to install an earlier version of this patch on older system versions
+- - Fixed a typo in the German translation, don't hesitate to contact me if you want to add a translation for your language!
+-
+- 1.5.1:
+- - Add support for SFOS 4.6, breaking compatibility with 4.5
+-
+- 1.5.0:
+- - Added full support for Emoji 15.1, you can finally type the "shaking my head" emoji
+- - Added support for translating the settings page, contributions are welcome!
+- - Added support for searching emojis by name and description in English and the current system language
+- - Added a note to the settings page asking for support: you can now donate on Liberapay if you like my work
+- - Supported search languages: Spanish, Swedish, Norwegian Bokmal, French, German (new translations added on request)
+- - Squashed a bunch of bugs and improved general stability
+- - Note: this release might be incompatible with SFOS 4.6 / SFOS 5.x, testers wanted!
+-
+- 1.4.2:
+- - Update compatibility info: the patch is compatible with all versions of SailfishOS up to 4.5.0.25
+- - You may have to install an earlier version of this patch on older system versions
+-
+- 1.4.1:
+- - Add support for Apple 16.4 emojis in the backend (but the new emojis will not yet show up in the keyboard)
+- - Packaging fixes
+-
+- 1.4.0:
+- - Added troubleshooting option in emoji keyboard settings: easily restart the keyboard service if no keys are being shown
+- - Fixed skin tone variations not being shown as images on SFOS 4
+- - Fixed log spam due to undefined variables on SFOS 4
+- - Updated compatibility info: the patch is compatible with all versions of SailfishOS up to 4.5.0.19
+-
+- 1.3.0:
+- - Emoji support updated to Emoji 14.0 (introducing melting face, more skin tone variations, etc.).
+- - IMPORTANT: you must manually update/re-download your emoji sets!
+- - Added support for Apple and Google Noto styles
+- - Added partial support for loading outdated emoji sets
+- - Added support for having a large number of variations on a key (this may impact other keyboards)
+-
+- 1.2.0:
+- - Preliminary support for shared use of the emoji implementation in other apps
+- - Improved stability of skin tone variations on SFOS 4
+-
+- 1.1.0:
+- - Experimental compatibility with SFOS 4
+- - Some settings require to change back and forth to a text keyboard to take effect
+- - Make key size configurable
+- - Increase history size from 30 to 40
+- - Show if an emoji set is currently installed
+- - Don't show placeholder while loading icons to avoid flickering
+- - Use simplified config label component
+- - Fix some flickering when closing the config overlay
+- - Fix removing failed icons from list of recently used emojis
+- - Fix a possible bug causing last row to be empty
+-
+- 1.0.1:
+- - Support users other than "nemo"
+- - Close settings page by dragging like a fake pulley menu
+- - Configure number of keyboard rows
+- - Fix some corner cases causing the keyboard to become unresponsive
+-
+- 1.0.0:
+- - Initial public release (not yet compatible with SFOS 4)
+
+# kate: syntax SailfishOS Patch
